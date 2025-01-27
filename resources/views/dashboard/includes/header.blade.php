@@ -51,13 +51,6 @@
                                 <img style="height: 35px;" src="{{asset('assets/admin/images/logo/logo.png')}}" alt="avatar">
                             </span>
 
-                <span class="mr-1">مرجبا
-                  <span
-                      class="user-name text-bold-700">  Ahmed Emam</span>
-                </span>
-                            <span class="avatar avatar-online">
-                  <img  style="height: 35px;" src="" alt="avatar"><i></i></span>
-
                         </a>
                         <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href=""><i
                                     class="ft-user"></i> تعديل الملف الشحصي </a>
