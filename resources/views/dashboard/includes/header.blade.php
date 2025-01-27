@@ -38,7 +38,6 @@
                         </li>
                     @endforeach
 
-
                 </ul>
                 <ul class="nav navbar-nav float-right">
                     <li class="dropdown dropdown-user nav-item">

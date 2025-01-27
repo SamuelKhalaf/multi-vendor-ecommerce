@@ -20,7 +20,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFileName().'/plugins/animate/animate.css')}}">
     <!-- BEGIN VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/vendors.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFileName().'/vendors.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/weather-icons/climacons.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/fonts/meteocons/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/charts/morris.css')}}">
@@ -31,26 +31,26 @@
     <link rel="stylesheet" type="text/css"
           href="{{asset('assets/admin/vendors/css/forms/toggle/bootstrap-switch.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/forms/toggle/switchery.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/core/menu/menu-types/vertical-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/pages/chat-application.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFileName().'/core/menu/menu-types/vertical-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFileName().'/pages/chat-application.css')}}">
     <!-- END VENDOR CSS-->
     <!-- BEGIN MODERN CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/app.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/custom-rtl.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFileName().'/app.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFileName().'/custom-rtl.css')}}">
     <!-- END MODERN CSS-->
     <!-- BEGIN Page Level CSS-->
     <link rel="stylesheet" type="text/css"
-          href="{{asset('assets/admin/css-rtl/core/menu/menu-types/vertical-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/core/colors/palette-gradient.css')}}">
+          href="{{asset('assets/admin/'.getFileName().'/core/menu/menu-types/vertical-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFileName().'/core/colors/palette-gradient.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/fonts/simple-line-icons/style.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/core/colors/palette-gradient.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/pages/timeline.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFileName().'/core/colors/palette-gradient.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFileName().'/pages/timeline.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/cryptocoins/cryptocoins.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/extensions/datedropper.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/extensions/timedropper.min.css')}}">
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/style-rtl.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFileName().'/style-rtl.css')}}">
     <!-- END Custom CSS-->
     @notify_css
     @yield('style')
