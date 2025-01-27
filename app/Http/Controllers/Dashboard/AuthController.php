@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\adminLoginRequest;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
-class LoginController extends Controller
+class AuthController extends Controller
 {
-    public function login()
+    public function login(): View
     {
         return view('dashboard.auth.login');
     }
@@ -24,5 +26,16 @@ class LoginController extends Controller
         return redirect()->route('admin.login')->with([
             'error' => 'البريد الإلكتروني أو كلمة المرور غير صحيحة',
         ])->withInput($request->only('email'));
+    }
+
+    public function logout(): RedirectResponse
+    {
+        auth('admin')->logout();
+
+        request()->session()->invalidate();
+
+        request()->session()->regenerateToken();
+
+        return redirect()->route('admin.login');
     }
 }
