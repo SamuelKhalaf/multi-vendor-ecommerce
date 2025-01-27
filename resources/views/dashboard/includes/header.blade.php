@@ -26,16 +26,38 @@
                                                               href="#"><i class="ft-menu"></i></a></li>
                     <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i
                                 class="ficon ft-maximize"></i></a></li>
+
+                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bold"
+                               rel="alternate"
+                               hreflang="{{ $localeCode }}"
+                               href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                {{ $properties['native'] }}
+                            </a>
+                        </li>
+                    @endforeach
+
+
                 </ul>
                 <ul class="nav navbar-nav float-right">
                     <li class="dropdown dropdown-user nav-item">
                         <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+
+                            <span class="mr-1">مرجبا
+                              <span class="user-name text-bold-700">  Ahmed Emam</span>
+                            </span>
+                            <span class="avatar avatar-online">
+                                <img style="height: 35px;" src="{{asset('assets/admin/images/logo/logo.png')}}" alt="avatar">
+                            </span>
+
                 <span class="mr-1">مرجبا
                   <span
                       class="user-name text-bold-700">  Ahmed Emam</span>
                 </span>
                             <span class="avatar avatar-online">
                   <img  style="height: 35px;" src="" alt="avatar"><i></i></span>
+
                         </a>
                         <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href=""><i
                                     class="ft-user"></i> تعديل الملف الشحصي </a>

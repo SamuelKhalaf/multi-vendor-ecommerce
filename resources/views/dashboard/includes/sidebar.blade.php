@@ -10,6 +10,15 @@
                 <a href=""><i class="la la-home"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">لغات الموقع </span>
                     <span
+
+                        class="badge badge badge-info badge-pill float-right mr-2">{{--App\Models\Language::count()--}}</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="active"><a class="menu-item" href="{{--route('admin.languages')--}}"
+                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    </li>
+                    <li><a class="menu-item" href="{{--route('admin.languages.create')--}}" data-i18n="nav.dash.crypto">أضافة
+
                         class="badge badge badge-info badge-pill float-right mr-2"></span>
                 </a>
                 <ul class="menu-content">
@@ -17,6 +26,7 @@
                                           data-i18n="nav.dash.ecommerce"> عرض الكل </a>
                     </li>
                     <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
+
                             لغة جديده </a>
                     </li>
                 </ul>
@@ -26,6 +36,15 @@
             <li class="nav-item"><a href=""><i class="la la-group"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">الاقسام الرئيسيه </span>
                     <span
+
+                        class="badge badge badge-danger badge-pill float-right mr-2">{{--App\Models\MainCategory::defaultCategory() ->count()--}}</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="active"><a class="menu-item" href="{{--route('admin.maincategories')--}}"
+                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    </li>
+                    <li><a class="menu-item" href="{{--route('admin.maincategories.create')--}}" data-i18n="nav.dash.crypto">أضافة
+
                         class="badge badge badge-danger badge-pill float-right mr-2"></span>
                 </a>
                 <ul class="menu-content">
@@ -33,6 +52,7 @@
                                           data-i18n="nav.dash.ecommerce"> عرض الكل </a>
                     </li>
                     <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
+
                              قسم جديد </a>
                     </li>
                 </ul>
@@ -44,10 +64,17 @@
                         class="badge badge badge-danger badge-pill float-right mr-2">400</span>
                 </a>
                 <ul class="menu-content">
+
+                    <li class="active"><a class="menu-item" href="{{--route('admin.subcategories')--}}"
+                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    </li>
+                    <li><a class="menu-item" href="{{--route('admin.subcategories.create')--}}" data-i18n="nav.dash.crypto">أضافة
+
                     <li class="active"><a class="menu-item" href=""
                                           data-i18n="nav.dash.ecommerce"> عرض الكل </a>
                     </li>
                     <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
+
                             قسم فرعي جديد </a>
                     </li>
                 </ul>
@@ -56,6 +83,15 @@
             <li class="nav-item"><a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">المتاجر  </span>
                     <span
+
+                        class="badge badge badge-success badge-pill float-right mr-2">{{--App\Models\Vendor::count()--}}</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="active"><a class="menu-item" href="{{--route('admin.vendors')--}}"
+                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    </li>
+                    <li><a class="menu-item" href="{{--route('admin.vendors.create')--}}" data-i18n="nav.dash.crypto">أضافة
+
                         class="badge badge badge-success badge-pill float-right mr-2"></span>
                 </a>
                 <ul class="menu-content">
@@ -63,6 +99,7 @@
                                           data-i18n="nav.dash.ecommerce"> عرض الكل </a>
                     </li>
                     <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
+
                             متجر  </a>
                     </li>
                 </ul>
@@ -87,9 +124,14 @@
 
             <li class="nav-item">
                 <a href=""><i class="la la-male"></i>
+
+                    <span class="menu-title" data-i18n="nav.dash.main"></span>
+                    <span class="badge badge badge-danger  badge-pill float-right mr-2">0</span>
+
                     <span class="menu-title" data-i18n="nav.dash.main">تذاكر المراسلات   </span>
                     <span
                         class="badge badge badge-danger  badge-pill float-right mr-2">0</span>
+
                 </a>
                 <ul class="menu-content">
                     <li class="active"><a class="menu-item" href=""
@@ -100,6 +142,19 @@
 
 
             <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title"
+
+                                                                                    data-i18n="nav.templates.main">الاعدادات</span></a>
+                <ul class="menu-content">
+                    <li><a class="menu-item" href="#" data-i18n="nav.templates.vert.main">وسائل التوصيل</a>
+                        <ul class="menu-content">
+                            <li><a class="menu-item" href="{{route('edit.shipping.methods',['free'])}}"
+                                   data-i18n="nav.templates.vert.classic_menu">توصيل مجانى</a>
+                            </li>
+                            <li><a class="menu-item" href="{{route('edit.shipping.methods',['local'])}}"> توصيل داخلى</a>
+                            </li>
+                            <li><a class="menu-item" href="{{route('edit.shipping.methods',['outer'])}}"
+                                   data-i18n="nav.templates.vert.compact_menu">توصيل خارجى</a>
+
                                                                                     data-i18n="nav.templates.main">Templates</span></a>
                 <ul class="menu-content">
                     <li><a class="menu-item" href="#" data-i18n="nav.templates.vert.main">Vertical</a>
@@ -127,6 +182,7 @@
                             </li>
                             <li><a class="menu-item" href="../horizontal-menu-template-nav"
                                    data-i18n="nav.templates.horz.top_icon">Full Width</a>
+
                             </li>
                         </ul>
                     </li>
