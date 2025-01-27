@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+
 <html class="loading" lang="en" data-textdirection="{{app()->getLocale() === 'ar' ? 'rtl' : 'ltr'}}">
+
+<html class="loading" lang="en" data-textdirection="rtl">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,9 +22,15 @@
     <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css"
           rel="stylesheet">
 
+
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFileName().'/plugins/animate/animate.css')}}">
     <!-- BEGIN VENDOR CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFileName().'/vendors.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/plugins/animate/animate.css')}}">
+    <!-- BEGIN VENDOR CSS-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/vendors.css')}}">
+
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/weather-icons/climacons.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/fonts/meteocons/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/charts/morris.css')}}">
@@ -31,6 +41,7 @@
     <link rel="stylesheet" type="text/css"
           href="{{asset('assets/admin/vendors/css/forms/toggle/bootstrap-switch.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/forms/toggle/switchery.min.css')}}">
+
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFileName().'/core/menu/menu-types/vertical-menu.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFileName().'/pages/chat-application.css')}}">
     <!-- END VENDOR CSS-->
@@ -45,12 +56,32 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/fonts/simple-line-icons/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFileName().'/core/colors/palette-gradient.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFileName().'/pages/timeline.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/core/menu/menu-types/vertical-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/pages/chat-application.css')}}">
+    <!-- END VENDOR CSS-->
+    <!-- BEGIN MODERN CSS-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/app.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/custom-rtl.css')}}">
+    <!-- END MODERN CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" type="text/css"
+          href="{{asset('assets/admin/css-rtl/core/menu/menu-types/vertical-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/core/colors/palette-gradient.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/fonts/simple-line-icons/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/core/colors/palette-gradient.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/pages/timeline.css')}}">
+
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/cryptocoins/cryptocoins.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/extensions/datedropper.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/extensions/timedropper.min.css')}}">
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
+
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFileName().'/style-rtl.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/style-rtl.css')}}">
+
     <!-- END Custom CSS-->
     @notify_css
     @yield('style')
@@ -61,7 +92,11 @@
         }
     </style>
 </head>
+
 <body class="vertical-layout vertical-menu 2-columns  @if(Request::is('admin/users/tickets/reply*')) chat-application @endif menu-expanded fixed-navbar"
+
+<body class="vertical-layout vertical-menu 2-columns menu-expanded fixed-navbar"
+
       data-open="click" data-menu="vertical-menu" data-col="2-columns">
 <!-- fixed-top-->
 @include('dashboard.includes.header')
