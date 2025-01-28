@@ -71,7 +71,7 @@ $(document).ready(function(){
         }
     });
 
-    // Categories
+    // Category
     $.widget("custom.catcomplete", $.ui.autocomplete, {
         _create: function() {
             this._super();

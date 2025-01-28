@@ -10,9 +10,9 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="">الرئيسية</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="">الاعدادات</a>
+                                <li class="breadcrumb-item"><a href="">الملف الشخصى</a>
                                 </li>
-                                <li class="breadcrumb-item active">وسائل التوصيل</li>
+                                <li class="breadcrumb-item active">تعديل الملف الشخصى</li>
                             </ol>
                         </div>
                     </div>
@@ -25,7 +25,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="basic-layout-form">تعديل وسيلة التوصيل</h4>
+                                    <h4 class="card-title" id="basic-layout-form">تعديل الملف الشخصى</h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -42,47 +42,78 @@
                                 <div class="card-content collapse show">
                                     <div class="card-body">
                                         <form class="form"
-                                              action="{{route('update.shipping.methods',$shippingMethod -> id)}}"
+                                              action="{{route('admin.update.profile')}}"
                                               method="POST">
                                             @csrf
+                                            @method('PUT')
 
-                                            <input type="hidden" name="id" value="{{$shippingMethod -> id}}">
+                                            <input type="hidden" name="id" value="{{$admin -> id}}">
 
                                             <div class="form-body">
 
-                                                <h4 class="form-section"><i class="fa-solid fa-cart-shopping"></i> بيانات التوصيل </h4>
+                                                <h4 class="form-section"><i class="fa-solid fa-id-card"></i> بيانات الملف الشخصى </h4>
+
+                                                <div class="row">
+                                                    <div class="col-md-6 ">
+                                                        <div class="form-group">
+                                                            <label for="name">الاسم </label>
+                                                            <input type="text" id="name"
+                                                                   class="form-control"
+                                                                   name="name"
+                                                                   value="{{old('name') ? old('name') : $admin->name}}">
+
+                                                            @error("name")
+                                                            <span class="text-danger"> {{$message}}</span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
 
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="value"> الاسم </label>
-                                                            <input type="text" value="{{$shippingMethod->value}}"
-                                                                   id="value"
+                                                            <label for="email"> البريد الألكترونى </label>
+                                                            <input type="email" value="{{old('email') ? old('email') : $admin->email}}"
+                                                                   id="email"
                                                                    class="form-control"
-                                                                   name="value">
-                                                            @error("value")
+                                                                   name="email">
+                                                            @error("email")
                                                             <span class="text-danger">{{$message}}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
                                                 </div>
 
-
                                                 <div class="row">
-                                                    <div class="col-md-6 ">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="plain_value"> قيمة التوصيل </label>
-                                                            <input type="number" id="plain_value"
+                                                            <label for="password">كلمة المرور</label>
+                                                            <input type="password"
+                                                                   id="password"
                                                                    class="form-control"
-                                                                   name="plain_value"
-                                                                   value="{{$shippingMethod->plain_value}}">
-
-                                                            @error("plain_value")
-                                                            <span class="text-danger"> {{$message}}</span>
+                                                                   name="password">
+                                                            @error("password")
+                                                            <span class="text-danger">{{$message}}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
                                                 </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="password_confirmation">تأكيد كلمة المرور</label>
+                                                            <input type="password"
+                                                                   id="password_confirmation"
+                                                                   class="form-control"
+                                                                   name="password_confirmation">
+                                                            @error("password_confirmation")
+                                                            <span class="text-danger">{{$message}}</span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                                             </div>
 
                                             <div class="form-actions">
