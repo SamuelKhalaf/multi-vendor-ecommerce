@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\AuthController;
+use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\SettingsController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -29,10 +30,14 @@ Route::group(
 
         // Settings
         Route::group(['prefix' => 'settings'],function (){
-
             Route::get('shipping_methods/{type}',[SettingsController::class,'editShippingMethods'])->name('edit.shipping.methods');
             Route::post('shipping_methods/{id}',[SettingsController::class,'updateShippingMethods'])->name('update.shipping.methods');
+        });
 
+        // Profile
+        Route::group(['prefix' => 'profile'],function (){
+            Route::get('edit',[ProfileController::class,'edit'])->name('admin.edit.profile');
+            Route::put('update',[ProfileController::class,'update'])->name('admin.update.profile');
         });
 
         // Logout

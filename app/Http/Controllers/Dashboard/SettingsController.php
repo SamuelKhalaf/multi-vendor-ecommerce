@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ShippingRequest;
+use App\Http\Requests\admin\ShippingRequest;
 use App\Models\Settings;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class SettingsController extends Controller

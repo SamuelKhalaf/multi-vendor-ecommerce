@@ -17,6 +17,7 @@
         rel="stylesheet">
     <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css"
           rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFileName().'/plugins/animate/animate.css')}}">
     <!-- BEGIN VENDOR CSS-->
@@ -119,7 +120,6 @@
 <script src="{{asset('assets/admin/js/scripts/forms/checkbox-radio.js')}}" type="text/javascript"></script>
 
 <script src="{{asset('assets/admin/js/scripts/modal/components-modal.js')}}" type="text/javascript"></script>
-
 <script>
     $('#meridians1').timeDropper({
         meridians: true,

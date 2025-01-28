@@ -191,7 +191,7 @@
 
 
             /************************************
-            *       Top Selling Categories      *
+            *       Top Selling Category      *
             ************************************/
 
             // Initialize chart
@@ -204,7 +204,7 @@
 
                 // Add title
                 title: {
-                    text: 'Top 5 Categories',
+                    text: 'Top 5 Category',
                     subtext: 'Top selling mobiles',
                     x: 'center',
                     textStyle: {
@@ -284,7 +284,7 @@
                 // Add series
                 series: [
                     {
-                        name: 'Top Categories',
+                        name: 'Top Category',
                         type: 'pie',
                         radius: ['50%', '70%'],
                         center: ['50%', '57.5%'],
