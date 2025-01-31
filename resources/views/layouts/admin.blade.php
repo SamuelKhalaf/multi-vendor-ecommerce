@@ -18,6 +18,9 @@
     <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css"
           rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Bootstrap Select CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFileName().'/plugins/animate/animate.css')}}">
     <!-- BEGIN VENDOR CSS-->
@@ -75,6 +78,9 @@
 
 @notify_js
 @notify_render
+
+<!-- jQuery (Required for Bootstrap Select) -->
+{{--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>--}}
 
 <!-- BEGIN VENDOR JS-->
 <script src="{{asset('assets/admin/vendors/js/vendors.min.js')}}" type="text/javascript"></script>
@@ -169,6 +175,7 @@
         meridians: true,setCurrentTime: false
     });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 @yield('script')
 </body>
 </html>
