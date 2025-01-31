@@ -22,6 +22,9 @@ class ProfileController extends Controller
         try {
             $admin = Admin::find($request->id);
 
+            if (!$admin){
+                return redirect()->route('admin.edit.profile')->with(['error' => 'حدث خطأ اثناء تحديث البيانات ']);
+            }
             $data = $request->except('id','password','password_confirmation');
             if ($request->filled('password')){
                 $data['password'] = bcrypt($request->password);

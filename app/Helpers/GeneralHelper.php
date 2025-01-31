@@ -1,4 +1,7 @@
 <?php
+
+use Illuminate\Support\Facades\Route;
+
     function getFileName(): string
     {
         if (app() ->getLocale() === 'ar'){
@@ -7,3 +10,17 @@
             return 'css';
         }
     }
+
+    function setActive($routeName, $paramName = null, $paramValue = null)
+    {
+        $isActive = request()->routeIs($routeName);
+
+        if ($paramName && $paramValue) {
+            return $isActive && request()->route($paramName) == $paramValue ? 'active' : '';
+        }
+
+        return $isActive ? 'active' : '';
+    }
+
+
+    define('PAGINATE_COUNT',5);

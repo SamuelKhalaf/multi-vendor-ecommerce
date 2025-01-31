@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\AuthController;
+use App\Http\Controllers\Dashboard\CategoriesController;
 use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\SettingsController;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +44,18 @@ Route::group(
         // Logout
         Route::get('logout',[AuthController::class,'logout'])->name('admin.logout');
 
+        ############################### Begin Categories Routes ###############################
+
+        Route::group(['prefix' => 'categories'],function (){
+            Route::get('/index/{type}',[CategoriesController::class,'index'])->name('admin.index.categories');
+            Route::get('create/{type}',[CategoriesController::class,'create'])->name('admin.create.categories');
+            Route::put('store/{type}',[CategoriesController::class,'store'])->name('admin.store.categories');
+            Route::get('edit/{type}/{id}',[CategoriesController::class,'edit'])->name('admin.edit.categories');
+            Route::put('update/{type}/{id}',[CategoriesController::class,'update'])->name('admin.update.categories');
+            Route::get('delete/{type}/{id}',[CategoriesController::class,'delete'])->name('admin.delete.categories');
+        });
+
+        ###############################  End Categories Routes  ###############################
     });
 
     Route::group(['namespace' => 'Dashboard' , 'middleware' => 'guest:admin','prefix' => 'admin'] , function (){
