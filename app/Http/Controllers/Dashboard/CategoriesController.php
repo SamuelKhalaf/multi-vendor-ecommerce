@@ -13,7 +13,7 @@ class CategoriesController extends Controller
     public function index(string $type): View|RedirectResponse
     {
         if ($type === 'main'){
-            $categories = Category::parent()->paginate(PAGINATE_COUNT);
+            $categories = Category::parent()->orderBy('id','DESC')->paginate(PAGINATE_COUNT);
         }elseif ($type === 'sub'){
             $categories = Category::child()->paginate(PAGINATE_COUNT);
         }else{
@@ -101,7 +101,6 @@ class CategoriesController extends Controller
         } catch (\Exception $exception) {
 
             return redirect()->route('admin.edit.categories',['type' => $type, 'id' => $id])->with(['error' => 'حدث خطأ اثناء حذف البيانات']);
-
         }
     }
 

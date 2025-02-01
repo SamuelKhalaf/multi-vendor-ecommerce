@@ -9,11 +9,11 @@
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">الرئيسية </a>
+                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">الرئيسية</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="{{route('admin.index.categories',request()->route('type') == 'sub' ? 'sub' : 'main')}}"> الاقسام {{request()->route('type') == 'sub' ? 'الفرعية' : 'الرئيسية'}} </a>
+                                <li class="breadcrumb-item"><a href="{{route('admin.index.brands')}}">الماركات التجارية</a>
                                 </li>
-                                <li class="breadcrumb-item active">إضافة قسم جديد
+                                <li class="breadcrumb-item active">إضافة ماركة جديدة
                                 </li>
                             </ol>
                         </div>
@@ -27,7 +27,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="basic-layout-form"> إضافة قسم جديد </h4>
+                                    <h4 class="card-title" id="basic-layout-form"> إضافة ماركة جديدة </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -43,7 +43,7 @@
                                 @include('dashboard.includes.alerts.errors')
                                 <div class="card-content collapse show">
                                     <div class="card-body">
-                                        <form class="form" action="{{route('admin.store.categories',$type)}}"
+                                        <form class="form" action="{{route('admin.store.brands')}}"
                                               method="POST"
                                               enctype="multipart/form-data">
                                             @csrf
@@ -51,9 +51,9 @@
                                             <input name="id" value="" type="hidden">
 
                                             <div class="form-group">
-                                                <label> صوره القسم </label>
+                                                <label> صوره الماركة التجارية</label>
                                                 <label id="file" class="file center-block">
-                                                    <input type="file" id="file" name="photo">
+                                                    <input type="file" id="file" name="photo" accept="image/*">
                                                     <span class="file-custom"></span>
                                                 </label>
                                                 @error('photo')
@@ -62,12 +62,12 @@
                                             </div>
 
                                             <div class="form-body">
-                                                <h4 class="form-section"><i class="ft-home"></i> بيانات القسم </h4>
+                                                <h4 class="form-section"><i class="ft-home"></i> بيانات الماركة التجارية</h4>
 
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="name"> اسم القسم </label>
+                                                            <label for="name"> اسم الماركة التجارية</label>
                                                             <input type="text" value="" id="name"
                                                                    class="form-control"
                                                                    name="name">
@@ -76,40 +76,24 @@
                                                             @enderror
                                                         </div>
                                                     </div>
+                                                    {{--
 
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="slug"> رابط القسم </label>
-                                                            <input type="text" value="" id="slug"
-                                                                   class="form-control"
-                                                                   name="slug">
-                                                            @error("slug")
-                                                            <span class="text-danger">{{$message}}</span>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                @if(request()->route('type') == 'sub')
-                                                    <div class="row">
                                                         <div class="col-md-6">
-                                                            <div class="form-group mt-1">
-                                                                <label for="slug">القسم الرئيسى</label>
-                                                                <select id="parent_id" class="form-control" name="parent_id">
-                                                                    <optgroup label="من فضلك اختر القسم الرئيسى">
-                                                                    @foreach($mainCategories as $mainCategory)
-                                                                        <option value="{{$mainCategory->id}}">{{$mainCategory->name}}</option>
-                                                                    @endforeach
-                                                                </select>
-                                                                @error("parent_id")
+                                                            <div class="form-group">
+                                                                <label for="slug"> رابط الماركة </label>
+                                                                <input type="text" value="" id="slug"
+                                                                       class="form-control"
+                                                                       name="slug">
+                                                                @error("slug")
                                                                 <span class="text-danger">{{$message}}</span>
                                                                 @enderror
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    --}}
 
-                                                @endif
 
+                                            </div>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group mt-1">
@@ -123,9 +107,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
-                                            </div>
-
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"
                                                         onclick="history.back();">
