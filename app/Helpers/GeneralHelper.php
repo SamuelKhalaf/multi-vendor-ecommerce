@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+    define('PAGINATE_COUNT',5);
+
     function getFileName(): string
     {
         if (app() ->getLocale() === 'ar'){
@@ -22,5 +24,8 @@ use Illuminate\Support\Facades\Route;
         return $isActive ? 'active' : '';
     }
 
-
-    define('PAGINATE_COUNT',5);
+    function uploadImage($disk,$image)
+    {
+        $image->store('/',$disk);
+        return $image->hashname();
+    }
