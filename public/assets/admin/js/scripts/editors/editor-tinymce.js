@@ -86,11 +86,11 @@
 				color: '#ff0000'
 			}
 		}, {
-			title: 'Example 1',
+			title: 'RepositoryInterface 1',
 			inline: 'span',
 			classes: 'example1'
 		}, {
-			title: 'Example 2',
+			title: 'RepositoryInterface 2',
 			inline: 'span',
 			classes: 'example2'
 		}, {

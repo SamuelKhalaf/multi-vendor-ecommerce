@@ -378,7 +378,7 @@
       '[variable-2 * Item one]',
       '[variable-2 * Item two]',
       '',
-      '[comment <a href="http://example.com">Example</a>]',
+      '[comment <a href="http://example.com">RepositoryInterface</a>]',
       '',
       '[comment </section>]',
       '[comment </div>]');

@@ -2,7 +2,7 @@
 
 return [
 
-    // Uncomment the languages that your site supports - or add new ones.
+    // Uncomment the languages that your front supports - or add new ones.
     // These are sorted by the native name, which is the order you might show them in a language selector.
     // Regional languages are sorted by their base language, so "British English" sorts as "English, British"
     'supportedLocales' => [
@@ -330,7 +330,7 @@ return [
 
     // If you want to display the locales in particular order in the language selector you should write the order here.
     //CAUTION: Please consider using the appropriate locale code otherwise it will not work
-    //Example: 'localesOrder' => ['es','en'],
+    //RepositoryInterface: 'localesOrder' => ['es','en'],
     'localesOrder' => [],
 
     // If you want to use custom language URL segments like 'at' instead of 'de-AT', you can map them to allow the

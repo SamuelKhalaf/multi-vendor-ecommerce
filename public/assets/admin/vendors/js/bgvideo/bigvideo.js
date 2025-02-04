@@ -412,12 +412,12 @@
 		};
 
 		// Expose BigVideoJS player actions play, pause, skip (if a playlist is available)
-		// Example: BigVideo.triggerPlayer('skip')
+		// RepositoryInterface: BigVideo.triggerPlayer('skip')
 		BigVideo.triggerPlayer = function(action){
 			playControl(action);
 		};
 
 		return BigVideo;
-		
+
 	};
 });

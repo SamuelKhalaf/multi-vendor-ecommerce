@@ -1,5 +1,5 @@
 /*
- * jQuery File Upload Plugin Angular JS Example
+ * jQuery File Upload Plugin Angular JS RepositoryInterface
  * https://github.com/blueimp/jQuery-File-Upload
  *
  * Copyright 2013, Sebastian Tschan

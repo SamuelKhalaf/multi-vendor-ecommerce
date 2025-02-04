@@ -6,47 +6,47 @@ var TextHighlightRules = require("./text_highlight_rules").TextHighlightRules;
 
 var ApacheConfHighlightRules = function() {
 
-    this.$rules = { start: 
-       [ { token: 
+    this.$rules = { start:
+       [ { token:
             [ 'punctuation.definition.comment.apacheconf',
               'comment.line.hash.ini',
               'comment.line.hash.ini' ],
            regex: '^((?:\\s)*)(#)(.*$)' },
-         { token: 
+         { token:
             [ 'punctuation.definition.tag.apacheconf',
               'entity.tag.apacheconf',
               'text',
               'string.value.apacheconf',
               'punctuation.definition.tag.apacheconf' ],
            regex: '(<)(Proxy|ProxyMatch|IfVersion|Directory|DirectoryMatch|Files|FilesMatch|IfDefine|IfModule|Limit|LimitExcept|Location|LocationMatch|VirtualHost)(?:(\\s)(.+?))?(>)' },
-         { token: 
+         { token:
             [ 'punctuation.definition.tag.apacheconf',
               'entity.tag.apacheconf',
               'punctuation.definition.tag.apacheconf' ],
            regex: '(</)(Proxy|ProxyMatch|IfVersion|Directory|DirectoryMatch|Files|FilesMatch|IfDefine|IfModule|Limit|LimitExcept|Location|LocationMatch|VirtualHost)(>)' },
-         { token: 
+         { token:
             [ 'keyword.alias.apacheconf', 'text',
               'string.regexp.apacheconf', 'text',
               'string.replacement.apacheconf', 'text' ],
            regex: '(Rewrite(?:Rule|Cond))(\\s+)(.+?)(\\s+)(.+?)($|\\s)' },
-         { token: 
+         { token:
             [ 'keyword.alias.apacheconf', 'text',
               'entity.status.apacheconf', 'text',
               'string.regexp.apacheconf', 'text',
               'string.path.apacheconf', 'text' ],
            regex: '(RedirectMatch)(?:(\\s+)(\\d\\d\\d|permanent|temp|seeother|gone))?(\\s+)(.+?)(\\s+)(?:(.+?)($|\\s))?' },
-         { token: 
-            [ 'keyword.alias.apacheconf', 'text', 
+         { token:
+            [ 'keyword.alias.apacheconf', 'text',
               'entity.status.apacheconf', 'text',
               'string.path.apacheconf', 'text',
               'string.path.apacheconf', 'text' ],
            regex: '(Redirect)(?:(\\s+)(\\d\\d\\d|permanent|temp|seeother|gone))?(\\s+)(.+?)(\\s+)(?:(.+?)($|\\s))?' },
-         { token: 
+         { token:
             [ 'keyword.alias.apacheconf', 'text',
               'string.regexp.apacheconf', 'text',
               'string.path.apacheconf', 'text' ],
            regex: '(ScriptAliasMatch|AliasMatch)(\\s+)(.+?)(\\s+)(?:(.+?)(\\s))?' },
-         { token: 
+         { token:
             [ 'keyword.alias.apacheconf', 'text',
               'string.path.apacheconf', 'text',
               'string.path.apacheconf', 'text' ],
@@ -118,7 +118,7 @@ var ApacheConfHighlightRules = function() {
          { token: 'keyword.mime.apacheconf',
            regex: '\\b(?:AddCharset|AddEncoding|AddHandler|AddInputFilter|AddLanguage|AddOutputFilter|AddType|DefaultLanguage|ModMimeUsePathInfo|MultiviewsMatch|RemoveCharset|RemoveEncoding|RemoveHandler|RemoveInputFilter|RemoveLanguage|RemoveOutputFilter|RemoveType|TypesConfig)\\b' },
          { token: 'keyword.misc.apacheconf',
-           regex: '\\b(?:ProtocolEcho|Example|AddModuleInfo|MimeMagicFile|CheckSpelling|ExtendedStatus|SuexecUserGroup|UserDir)\\b' },
+           regex: '\\b(?:ProtocolEcho|RepositoryInterface|AddModuleInfo|MimeMagicFile|CheckSpelling|ExtendedStatus|SuexecUserGroup|UserDir)\\b' },
          { token: 'keyword.negotiation.apacheconf',
            regex: '\\b(?:CacheNegotiatedDocs|ForceLanguagePriority|LanguagePriority)\\b' },
          { token: 'keyword.nw_ssl.apacheconf',
@@ -137,7 +137,7 @@ var ApacheConfHighlightRules = function() {
            regex: '\\b(?:CookieDomain|CookieExpires|CookieName|CookieStyle|CookieTracking)\\b' },
          { token: 'keyword.vhost_alias.apacheconf',
            regex: '\\b(?:VirtualDocumentRoot|VirtualDocumentRootIP|VirtualScriptAlias|VirtualScriptAliasIP)\\b' },
-         { token: 
+         { token:
             [ 'keyword.php.apacheconf',
               'text',
               'entity.property.apacheconf',
@@ -145,7 +145,7 @@ var ApacheConfHighlightRules = function() {
               'string.value.apacheconf',
               'text' ],
            regex: '\\b(php_value|php_flag)\\b(?:(\\s+)(.+?)(?:(\\s+)(.+?))?)?(\\s)' },
-         { token: 
+         { token:
             [ 'punctuation.variable.apacheconf',
               'variable.env.apacheconf',
               'variable.misc.apacheconf',
@@ -157,18 +157,18 @@ var ApacheConfHighlightRules = function() {
            regex: '\\b(?:from|unset|set|on|off)\\b',
            caseInsensitive: true },
          { token: 'constant.integer.apacheconf', regex: '\\b\\d+\\b' },
-         { token: 
+         { token:
             [ 'text',
               'punctuation.definition.flag.apacheconf',
               'string.flag.apacheconf',
               'punctuation.definition.flag.apacheconf',
               'text' ],
            regex: '(\\s)(\\[)(.*?)(\\])(\\s)' } ] }
-    
+
     this.normalizeRules();
 };
 
-ApacheConfHighlightRules.metaData = { fileTypes: 
+ApacheConfHighlightRules.metaData = { fileTypes:
        [ 'conf',
          'CONF',
          'htaccess',
@@ -212,7 +212,7 @@ var FoldMode = exports.FoldMode = function(commentRegex) {
 oop.inherits(FoldMode, BaseFoldMode);
 
 (function() {
-    
+
     this.foldingStartMarker = /(\{|\[)[^\}\]]*$|^\s*(\/\*)/;
     this.foldingStopMarker = /^[^\[\{]*(\}|\])|^[\s\*]*(\*\/)/;
     this.singleLineBlockCommentRe= /^\s*(\/\*).*\*\/\s*$/;
@@ -221,42 +221,42 @@ oop.inherits(FoldMode, BaseFoldMode);
     this._getFoldWidgetBase = this.getFoldWidget;
     this.getFoldWidget = function(session, foldStyle, row) {
         var line = session.getLine(row);
-    
+
         if (this.singleLineBlockCommentRe.test(line)) {
             if (!this.startRegionRe.test(line) && !this.tripleStarBlockCommentRe.test(line))
                 return "";
         }
-    
+
         var fw = this._getFoldWidgetBase(session, foldStyle, row);
-    
+
         if (!fw && this.startRegionRe.test(line))
             return "start"; // lineCommentRegionStart
-    
+
         return fw;
     };
 
     this.getFoldWidgetRange = function(session, foldStyle, row, forceMultiline) {
         var line = session.getLine(row);
-        
+
         if (this.startRegionRe.test(line))
             return this.getCommentRegionBlock(session, line, row);
-        
+
         var match = line.match(this.foldingStartMarker);
         if (match) {
             var i = match.index;
 
             if (match[1])
                 return this.openingBracketBlock(session, match[1], row, i);
-                
+
             var range = session.getCommentFoldRange(row, i + match[0].length, 1);
-            
+
             if (range && !range.isMultiLine()) {
                 if (forceMultiline) {
                     range = this.getSectionRange(session, row);
                 } else if (foldStyle != "all")
                     range = null;
             }
-            
+
             return range;
         }
 
@@ -273,7 +273,7 @@ oop.inherits(FoldMode, BaseFoldMode);
             return session.getCommentFoldRange(row, i, -1);
         }
     };
-    
+
     this.getSectionRange = function(session, row) {
         var line = session.getLine(row);
         var startIndent = line.search(/\S/);
@@ -290,7 +290,7 @@ oop.inherits(FoldMode, BaseFoldMode);
             if  (startIndent > indent)
                 break;
             var subRange = this.getFoldWidgetRange(session, "all", row);
-            
+
             if (subRange) {
                 if (subRange.start.row <= startRow) {
                     break;
@@ -302,14 +302,14 @@ oop.inherits(FoldMode, BaseFoldMode);
             }
             endRow = row;
         }
-        
+
         return new Range(startRow, startColumn, endRow, session.getLine(endRow).length);
     };
     this.getCommentRegionBlock = function(session, line, row) {
         var startColumn = line.search(/\s*$/);
         var maxRow = session.getLength();
         var startRow = row;
-        
+
         var re = /^\s*(?:\/\*|\/\/|--)#?(end)?region\b/;
         var depth = 1;
         while (++row < maxRow) {

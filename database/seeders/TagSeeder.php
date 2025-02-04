@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Tag;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,7 @@ class TagSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        // Create 10 tags with translations
+        Tag::factory()->count(10)->create();
     }
 }
