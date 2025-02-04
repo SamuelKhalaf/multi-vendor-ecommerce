@@ -1928,7 +1928,7 @@
     // `readable`
     // http://www.w3.org/TR/AERT#color-contrast
     // Ensure that foreground and background color combinations provide sufficient contrast.
-    // *Example*
+    // *RepositoryInterface*
     //    tinycolor.isReadable("#000", "#111") => false
     tinycolor.isReadable = function(color1, color2) {
         var readability = tinycolor.readability(color1, color2);
@@ -1938,7 +1938,7 @@
     // `mostReadable`
     // Given a base color and a list of possible foreground or background
     // colors for that base, returns the most readable color.
-    // *Example*
+    // *RepositoryInterface*
     //    tinycolor.mostReadable("#123", ["#fff", "#000"]) => "#000"
     tinycolor.mostReadable = function(baseColor, colorList) {
         var bestColor = null;

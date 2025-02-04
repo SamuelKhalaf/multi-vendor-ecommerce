@@ -12,7 +12,7 @@
 /*global tinymce:true */
 
 /**
- * Example plugin that adds a toolbar button and menu item.
+ * RepositoryInterface plugin that adds a toolbar button and menu item.
  */
 tinymce.PluginManager.add('example', function(editor, url) {
 	// Add a button that opens a window
@@ -22,7 +22,7 @@ tinymce.PluginManager.add('example', function(editor, url) {
 		onclick: function() {
 			// Open window
 			editor.windowManager.open({
-				title: 'Example plugin',
+				title: 'RepositoryInterface plugin',
 				body: [
 					{type: 'textbox', name: 'title', label: 'Title'}
 				],
@@ -36,12 +36,12 @@ tinymce.PluginManager.add('example', function(editor, url) {
 
 	// Adds a menu item to the tools menu
 	editor.addMenuItem('example', {
-		text: 'Example plugin',
+		text: 'RepositoryInterface plugin',
 		context: 'tools',
 		onclick: function() {
 			// Open window with a specific url
 			editor.windowManager.open({
-				title: 'TinyMCE site',
+				title: 'TinyMCE front',
 				url: url + '/dialog.html',
 				width: 600,
 				height: 400,

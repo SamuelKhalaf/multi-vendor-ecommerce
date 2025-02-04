@@ -10,7 +10,7 @@
                 <a href=""><i class="la la-home"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">لغات الموقع </span>
                     <span
-                        class="badge badge badge-info badge-pill float-right mr-2">{{--App\Models\Language::count()--}}</span>
+                        class="badge badge badge-info badge-pill float-right mr-2">{{--App\Models\Language::count()--}}0</span>
                 </a>
                 <ul class="menu-content">
                     <li><a class="menu-item" href="{{--route('admin.languages')--}}"
@@ -90,16 +90,47 @@
 
             <li class="nav-item">
                 <a href=""><i class="la la-male"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main"></span>
-                    <span class="badge badge badge-danger  badge-pill float-right mr-2">0</span>
+                    <span class="menu-title" data-i18n="nav.dash.main">المنتجات</span>
+                    <span class="badge badge badge-danger  badge-pill float-right mr-2">{{App\Models\Product::count()}}</span>
                 </a>
                 <ul class="menu-content">
-                    <li><a class="menu-item" href=""
-                                          data-i18n="nav.dash.ecommerce"> تذاكر الطلاب </a>
+                    <li class="{{setActive('admin.products')}}"><a class="menu-item" href="{{route('admin.products')}}"
+                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    </li>
+                    <li class="{{setActive('admin.products.general.create')}}"><a class="menu-item" href="{{route('admin.products.general.create')}}"
+                           data-i18n="nav.dash.ecommerce"> أضافة منتج جديد </a>
                     </li>
                 </ul>
             </li>
 
+            <li class="nav-item">
+                <a href=""><i class="la la-male"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">خصائص المنتجات</span>
+                    <span class="badge badge badge-danger  badge-pill float-right mr-2">{{App\Models\Attribute::count()}}</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="{{setActive('admin.attributes')}}"><a class="menu-item" href="{{route('admin.attributes')}}"
+                                                                   data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    </li>
+                    <li class="{{setActive('admin.attributes.create')}}"><a class="menu-item" href="{{route('admin.attributes.create')}}"
+                                                                                  data-i18n="nav.dash.ecommerce"> أضافة خاصية جديدة </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item"><a href=""><i class="la la-male"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">قيم الخصائص </span>
+                    <span class="badge badge badge-danger  badge-pill float-right mr-2">{{App\Models\Option::count()}}</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="{{setActive('admin.options')}}"><a class="menu-item" href="{{route('admin.options')}}"
+                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    </li>
+                    <li class="{{setActive('admin.options.create')}}"><a class="menu-item" href="{{route('admin.options.create')}}" data-i18n="nav.dash.crypto">
+                            أضافة قيمة خاصية جديدة </a>
+                    </li>
+                </ul>
+            </li>
 
             <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title"
                                                                                     data-i18n="nav.templates.main">الاعدادات</span></a>

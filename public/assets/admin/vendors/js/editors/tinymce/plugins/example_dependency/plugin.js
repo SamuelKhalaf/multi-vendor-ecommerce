@@ -18,5 +18,5 @@
  * this can be done with an object which has the url to the plugin and the shortname.
  */
 tinymce.PluginManager.add('example_dependency', function() {
-	// Example logic here
+	// RepositoryInterface logic here
 }, ['example']);

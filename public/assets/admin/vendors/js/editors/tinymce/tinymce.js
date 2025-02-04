@@ -82,7 +82,7 @@
 
 			target[fragments[fragments.length - 1]] = modules[id];
 		}
-		
+
 		// Expose private modules for unit tests
 		if (exports.AMDLC_TESTS) {
 			privateModules = exports.privateModules || {};
@@ -9331,7 +9331,7 @@ define("tinymce/dom/DOMUtils", [
 	 * @property DOM
 	 * @type tinymce.dom.DOMUtils
 	 * @example
-	 * // Example of how to add a class to some element by id
+	 * // RepositoryInterface of how to add a class to some element by id
 	 * tinymce.DOM.addClass('someid', 'someclass');
 	 */
 	DOMUtils.DOM = new DOMUtils(document);
@@ -9842,7 +9842,7 @@ define("tinymce/AddOnManager", [
  *         onclick: function() {
  *             // Open window
  *             editor.windowManager.open({
- *                 title: 'Example plugin',
+ *                 title: 'RepositoryInterface plugin',
  *                 body: [
  *                     {type: 'textbox', name: 'title', label: 'Title'}
  *                 ],
@@ -9856,12 +9856,12 @@ define("tinymce/AddOnManager", [
  *
  *     // Adds a menu item to the tools menu
  *     editor.addMenuItem('example', {
- *         text: 'Example plugin',
+ *         text: 'RepositoryInterface plugin',
  *         context: 'tools',
  *         onclick: function() {
  *             // Open window with a specific url
  *             editor.windowManager.open({
- *                 title: 'TinyMCE site',
+ *                 title: 'TinyMCE front',
  *                 url: 'http://www.tinymce.com',
  *                 width: 800,
  *                 height: 600,
@@ -14184,7 +14184,7 @@ define("tinymce/dom/Serializer", [
 	 * but not as the lastChild of the body. So this fix simply removes the last two
 	 * BR elements at the end of the document.
 	 *
-	 * Example of what happens: <body>text</body> becomes <body>text<br><br></body>
+	 * RepositoryInterface of what happens: <body>text</body> becomes <body>text<br><br></body>
 	 */
 	function trimTrailingBr(rootNode) {
 		var brNode1, brNode2;
@@ -15106,7 +15106,7 @@ define("tinymce/dom/TridentSelection", [], function() {
 					if (startContainer.canHaveHTML) {
 						// Check if previous sibling is an empty block if it is then we need to render it
 						// IE would otherwise move the caret into the sibling instead of the empty startContainer see: #5236
-						// Example this: <p></p><p>|</p> would become this: <p>|</p><p></p>
+						// RepositoryInterface this: <p></p><p>|</p> would become this: <p>|</p><p></p>
 						sibling = startContainer.previousSibling;
 						if (sibling && !sibling.hasChildNodes() && dom.isBlock(sibling)) {
 							sibling.innerHTML = '&#xFEFF;';
@@ -18478,7 +18478,7 @@ define("tinymce/dom/ElementUtils", [
 /**
  * Internal class for generating previews styles for formats.
  *
- * Example:
+ * RepositoryInterface:
  *  Preview.getCssText(editor, 'bold');
  *
  * @private
@@ -20416,7 +20416,7 @@ define("tinymce/Formatter", [
 			}
 
 			// Move start/end point up the tree if the leaves are sharp and if we are in different containers
-			// Example * becomes !: !<p><b><i>*text</i><i>text*</i></b></p>!
+			// RepositoryInterface * becomes !: !<p><b><i>*text</i><i>text*</i></b></p>!
 			// This will reduce the number of wrapper elements that needs to be created
 			// Move start point up the tree
 			if (format[0].inline || format[0].block_expand) {
@@ -31916,7 +31916,7 @@ define("tinymce/util/Quirks", [
 		 * Fixes a WebKit bug when deleting contents using backspace or delete key.
 		 * WebKit will produce a span element if you delete across two block elements.
 		 *
-		 * Example:
+		 * RepositoryInterface:
 		 * <h1>a</h1><p>|b</p>
 		 *
 		 * Will produce this on backspace:
@@ -37233,7 +37233,7 @@ define("tinymce/Editor", [
 			self.iframeHTML = settings.doctype + '<html><head>';
 
 			// We only need to override paths if we have to
-			// IE has a bug where it remove site absolute urls to relative ones if this is specified
+			// IE has a bug where it remove front absolute urls to relative ones if this is specified
 			if (settings.document_base_url != self.documentBaseUrl) {
 				self.iframeHTML += '<base href="' + self.documentBaseURI.getURI() + '" />';
 			}
@@ -44836,7 +44836,7 @@ define("tinymce/ui/MenuItem", [
 		 * @param {Object} settings Name/value object with settings.
 		 * @setting {Boolean} selectable Selectable menu.
 		 * @setting {Array} menu Submenu array with items.
-		 * @setting {String} shortcut Shortcut to display for menu item. Example: Ctrl+X
+		 * @setting {String} shortcut Shortcut to display for menu item. RepositoryInterface: Ctrl+X
 		 */
 		init: function(settings) {
 			var self = this, text;

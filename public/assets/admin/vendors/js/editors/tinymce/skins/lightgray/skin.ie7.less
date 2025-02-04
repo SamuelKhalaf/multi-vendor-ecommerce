@@ -1,7 +1,7 @@
 
 // Variables
 // Syntax: <control>-(<sub control>)-<bg|border|text>-(<state>)-(<extra>);
-// Example: @btn-primary-bg-hover-hlight;
+// RepositoryInterface: @btn-primary-bg-hover-hlight;
 
 @prefix:                         mce;
 
@@ -702,7 +702,7 @@ div.@{prefix}-tinymce-inline {
 // Panel
 
 .@{prefix}-panel {
-	border: 0 solid mix(rgb(red(@panel-border), green(@panel-border), blue(@panel-border)), @panel-bg, 20%); 
+	border: 0 solid mix(rgb(red(@panel-border), green(@panel-border), blue(@panel-border)), @panel-bg, 20%);
 	border: 0 solid @panel-border;
 	.vertical-gradient(@panel-bg, @panel-bg-hlight);
 }
@@ -1590,7 +1590,7 @@ i.@{prefix}-i-checkbox {
 }
 
 .@{prefix}-colorbutton-grid {
-	margin: 4px;	
+	margin: 4px;
 }
 
 .@{prefix}-colorbutton button {
@@ -2215,7 +2215,7 @@ div.@{prefix}-menu .@{prefix}-menu-item-sep, .@{prefix}-menu-item-sep:hover {
 	.reset-gradient();
 	z-index: 1000;
 	padding: 5px 0 5px 0;
-	margin: @menu-margin; 
+	margin: @menu-margin;
 	min-width: 160px;
 	background: @menu-bg;
 	border: 1px solid mix(rgb(red(@menu-border), green(@menu-border), blue(@menu-border)), @panel-bg, round(alpha(@menu-border) * 200));
@@ -2395,7 +2395,7 @@ i.@{prefix}-i-resize {
 }
 
 
-// StackLayout 
+// StackLayout
 
 .@{prefix}-stack-layout-item {
 	display: block;
@@ -2540,7 +2540,7 @@ i.@{prefix}-i-resize {
 
 // .@{prefix}-i-checkbox needs to have zoom overridden since it's set by the gradient mixin
 .@{prefix}-ico, i.@{prefix}-i-checkbox {
-	zoom: ~"expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = this.currentStyle['-ie7-icon'].substr(1, 1) + '&nbsp;')";	
+	zoom: ~"expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = this.currentStyle['-ie7-icon'].substr(1, 1) + '&nbsp;')";
 }
 
 .@{prefix}-i-save           { -ie7-icon: "\e000"; }
