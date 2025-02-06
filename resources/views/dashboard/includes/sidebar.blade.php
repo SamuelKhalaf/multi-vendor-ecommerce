@@ -136,10 +136,10 @@
                     <span class="menu-title" data-i18n="nav.dash.main">مستخدمي لوحه التحكم </span>
                 </a>
                 <ul class="menu-content">
-                    <li class="{{setActive('admin.users.index')}}"><a class="menu-item" href="{{--route('admin.users.index')--}}"
+                    <li class="{{setActive('admin.users.index')}}"><a class="menu-item" href="{{route('admin.users.index')}}"
                                           data-i18n="nav.dash.ecommerce"> عرض الكل </a>
                     </li>
-                    <li class="{{setActive('admin.users.create')}}"><a class="menu-item" href="{{--route('admin.users.create')--}}" data-i18n="nav.dash.crypto">
+                    <li class="{{setActive('admin.users.create')}}"><a class="menu-item" href="{{route('admin.users.create')}}" data-i18n="nav.dash.crypto">
                              إضافة مستخدم جديد</a>
                     </li>
                 </ul>
