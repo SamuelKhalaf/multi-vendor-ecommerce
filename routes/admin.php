@@ -9,6 +9,7 @@ use App\Http\Controllers\Dashboard\OptionController;
 use App\Http\Controllers\Dashboard\ProductController;
 use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\SettingsController;
+use App\Http\Controllers\Dashboard\SliderImageController;
 use App\Http\Controllers\Dashboard\TagsController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -117,6 +118,15 @@ Route::group(
             Route::get('delete/{id}',[OptionController::class,'destroy']) -> name('admin.options.delete');
         });
         ################################## end options    #######################################
+
+        ################################## sliders ######################################
+        Route::group(['prefix' => 'sliders'], function () {
+            Route::get('/', [SliderImageController::class,'addImages'])->name('admin.sliders.create');
+            Route::post('images', [SliderImageController::class,'saveSliderImages'])->name('admin.sliders.images.store');
+            Route::post('images/db', [SliderImageController::class,'saveSliderImagesDB'])->name('admin.sliders.images.store.db');
+
+        });
+        ################################## end sliders    #######################################
     });
 
     Route::group(['namespace' => 'App\Http\Controllers\Dashboard' , 'middleware' => 'guest:admin','prefix' => 'admin'] , function (){

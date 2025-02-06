@@ -49,7 +49,7 @@ return [
             'root' => public_path('assets/images/brands'),
             'url' => env('APP_URL').'/assets/images/brands',
             'visibility' => 'public',
-            'throw' => true,
+            'throw' => false,
         ],
 
         'products' => [
@@ -57,7 +57,15 @@ return [
             'root' => public_path('assets/images/products'),
             'url' => env('APP_URL').'/assets/images/products',
             'visibility' => 'public',
-            'throw' => true,
+            'throw' => false,
+        ],
+
+        'sliders' => [
+            'driver' => 'local',
+            'root' => public_path('assets/images/sliders'),
+            'url' => env('APP_URL').'/assets/images/sliders',
+            'visibility' => 'public',
+            'throw' => false,
         ],
 
         's3' => [

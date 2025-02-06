@@ -15,4 +15,9 @@ class ProductImages extends Model
     {
         return $this->belongsTo(Product::class, 'product_id');
     }
+
+    public function getPhotoAttribute($val)
+    {
+        return asset('assets/images/products/'.$val);
+    }
 }

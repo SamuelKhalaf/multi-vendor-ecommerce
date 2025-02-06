@@ -132,18 +132,41 @@
                 </ul>
             </li>
 
+            <li class="nav-item"><a href=""><i class="la la-male"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">مستخدمي لوحه التحكم </span>
+                </a>
+                <ul class="menu-content">
+                    <li class="{{setActive('admin.users.index')}}"><a class="menu-item" href="{{--route('admin.users.index')--}}"
+                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    </li>
+                    <li class="{{setActive('admin.users.create')}}"><a class="menu-item" href="{{--route('admin.users.create')--}}" data-i18n="nav.dash.crypto">
+                             إضافة مستخدم جديد</a>
+                    </li>
+                </ul>
+            </li>
+
             <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title"
                                                                                     data-i18n="nav.templates.main">الاعدادات</span></a>
                 <ul class="menu-content">
+
                     <li><a class="menu-item" href="#" data-i18n="nav.templates.vert.main">وسائل التوصيل</a>
                         <ul class="menu-content">
-                            <li><a class="menu-item" href="{{route('edit.shipping.methods',['free'])}}"
+                            <li class="{{setActive('edit.shipping.methods',['free'])}}"><a class="menu-item" href="{{route('edit.shipping.methods',['free'])}}"
                                    data-i18n="nav.templates.vert.classic_menu">توصيل مجانى</a>
                             </li>
-                            <li><a class="menu-item" href="{{route('edit.shipping.methods',['local'])}}"> توصيل داخلى</a>
+                            <li class="{{setActive('edit.shipping.methods',['local'])}}"><a class="menu-item" href="{{route('edit.shipping.methods',['local'])}}"> توصيل داخلى</a>
                             </li>
-                            <li><a class="menu-item" href="{{route('edit.shipping.methods',['outer'])}}"
+                            <li class="{{setActive('edit.shipping.methods',['outer'])}}"><a class="menu-item" href="{{route('edit.shipping.methods',['outer'])}}"
                                    data-i18n="nav.templates.vert.compact_menu">توصيل خارجى</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li><a class="menu-item" href="#"
+                           data-i18n="nav.templates.vert.main"> شريط التمرير الجانبى </a>
+                        <ul class="menu-content">
+                            <li class="{{setActive('admin.sliders.create')}}"><a class="menu-item" href="{{route('admin.sliders.create')}}"
+                                   data-i18n="nav.templates.vert.classic_menu"> صور شريط التمرير </a>
                             </li>
                         </ul>
                     </li>
