@@ -6,6 +6,9 @@ use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Category extends Model
 {
@@ -33,13 +36,23 @@ class Category extends Model
         return $query->where('is_active' , 1);
     }
 
-    public function getActive()
+    public function getActive(): string
     {
         return $this->is_active == 0 ? 'غير مفعل' : 'مفعل';
     }
 
-    public function _parent(): void
+    public function _parent(): BelongsTo
     {
-        $this->belongsTo(self::class,'parent_id','id');
+        return $this->belongsTo(self::class,'parent_id','id');
+    }
+
+    public function children(): HasMany
+    {
+        return $this->hasMany(self::class,'parent_id','id');
+    }
+
+    public function products(): BelongsToMany
+    {
+        return $this->belongsToMany(Product::class,'product_categories','category_id','product_id');
     }
 }

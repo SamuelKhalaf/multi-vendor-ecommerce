@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Http\Enumerations\CategoryType;
-use App\Http\Requests\admin\CategoryRequest;
 use App\Http\Requests\admin\GeneralProductRequest;
 use App\Http\Requests\admin\ProductImagesRequest;
 use App\Http\Requests\admin\ProductPriceRequest;

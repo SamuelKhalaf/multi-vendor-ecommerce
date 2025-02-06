@@ -19,8 +19,9 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
+        'mobile',
         'password',
+        'verified_at',
     ];
 
     /**
@@ -39,7 +40,21 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function verification_codes()
+    {
+        return $this->hasMany(UserVerificationCode::class);
+    }
+
+    public function wishlist()
+    {
+        return $this->belongsToMany(Product::class,'wish_lists');
+    }
+
+    public function wishListHas($productId)
+    {
+        return self::wishlist()->where('product_id',$productId)->exists();
+    }
 }

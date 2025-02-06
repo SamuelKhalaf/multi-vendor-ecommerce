@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\admin\admin\admin\admin\ProfileRequest;
+use App\Http\Requests\admin\ProfileRequest;
 use App\Models\Admin;
-use Illuminate\Http\RedirectResponse;
 
 class ProfileController extends Controller
 {
