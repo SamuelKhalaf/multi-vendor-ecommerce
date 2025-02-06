@@ -8,9 +8,11 @@ use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\OptionController;
 use App\Http\Controllers\Dashboard\ProductController;
 use App\Http\Controllers\Dashboard\ProfileController;
+use App\Http\Controllers\Dashboard\RolesController;
 use App\Http\Controllers\Dashboard\SettingsController;
 use App\Http\Controllers\Dashboard\SliderImageController;
 use App\Http\Controllers\Dashboard\TagsController;
+use App\Http\Controllers\Dashboard\UsersController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -127,6 +129,25 @@ Route::group(
 
         });
         ################################## end sliders    #######################################
+
+        ################################## roles ######################################
+        Route::group(['prefix' => 'roles'], function () {
+            Route::get('/', [RolesController::class,'index'])->name('admin.roles.index');
+            Route::get('create', [RolesController::class,'create'])->name('admin.roles.create');
+            Route::post('store', [RolesController::class,'saveRole'])->name('admin.roles.store');
+            Route::get('/edit/{id}', [RolesController::class,'edit']) ->name('admin.roles.edit') ;
+            Route::post('update/{id}', [RolesController::class,'update'])->name('admin.roles.update');
+        });
+        ################################## end roles ######################################
+
+        ################################## admin routes ######################################
+        Route::group(['prefix' => 'users' ,'middleware' => 'can:users'], function () {
+            Route::get('/', [UsersController::class,'index'])->name('admin.users.index');
+            Route::get('/create', [UsersController::class,'create'])->name('admin.users.create');
+            Route::post('/store', [UsersController::class,'store'])->name('admin.users.store');
+        });
+        ################################## end routes ######################################
+
     });
 
     Route::group(['namespace' => 'App\Http\Controllers\Dashboard' , 'middleware' => 'guest:admin','prefix' => 'admin'] , function (){
